@@ -10,11 +10,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body ng-controller="blogCtrl">
-        <div>
-            <h1>{{title}}</h1><br>
-            <ol>
-                Titulo:<input ng-model="title">
-            </ol>
+            <div>
+          <form>
+            <fieldset>
+                <legend>Entry</legend>
+                <label for='title'>Title:</label><input id='title' name='title' type="text" ng-model= "entry.title">
+                <label for='content'>Content:</label><input id='content' name='content' type="text" ng-model= "entry.content">
+          </form>
         </div>
     </body>
 </html>

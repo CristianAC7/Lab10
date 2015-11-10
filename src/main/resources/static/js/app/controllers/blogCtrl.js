@@ -35,5 +35,4 @@ app.controller("blogCtrl", function($scope,$log,$http) {
             $scope.loadData();
         });
     };
-    $scope.processForm();
 });

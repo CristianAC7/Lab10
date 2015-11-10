@@ -9,7 +9,7 @@ app.controller("blogCtrl", function($scope,$log,$http) {
     $scope.loadData = function() {
         $http({
             method: "GET",
-            url: "blogs"
+            url: "http://localhost:8080/blogs"
         }).success(function(data) {
             $scope.entries = data;
         }).error(function(data,status,headers,config) {
@@ -22,25 +22,12 @@ app.controller("blogCtrl", function($scope,$log,$http) {
         $log.debug($scope.entry);
         $http({
             method  : "POST",
-            url     : "blog",
+            url     : "http://localhost:8080/blog",
             data    : $scope.entry
         }).success(function(data) {
             console.log(data);
             $scope.loadData();
         });
-    };
-    $scope.processForm();
-
-    $scope.edit = function(){
-	   $log.debug($scope.entry);
-	   $http({
-            method  : "PUT",
-            url     : "blog",
-            data    : $scope.entry
-	   }).success(function(data) {
-            $scope.entries = data;
-            console.log(data);
-         });
     };
 });
 

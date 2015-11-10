@@ -26,6 +26,7 @@
             <th>Título </th>
             <th>Contenido</th>
             <th>Editar </th>
+	    <th>Eliminar </th>
           </tr>
 
           <tr ng-repeat="e in entries">
@@ -34,6 +35,11 @@
             <td>
               <button type="button" class="btn btn-warning"  ng-click="edit($index)">
                 Editar
+              </button>
+            </td>
+	    <td>
+              <button type="button" class="btn btn-warning"  ng-click="delete($index)">
+                Borrar
               </button>
             </td>
           </tr>

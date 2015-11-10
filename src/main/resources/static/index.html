@@ -18,5 +18,22 @@
                 <label for='content'>Content:</label><input id='content' name='content' type="text" ng-model= "entry.content">
           </form>
         </div>
+        <table class="table">
+          <tr>
+            <th>Título </th>
+            <th>Contenido</th>
+            <th>Editar </th>
+          </tr>
+
+          <tr ng-repeat="e in entries">
+            <td> {{ e.title }} </td>
+            <td> {{ e.content }} </td>
+            <td>
+              <button type="button" class="btn btn-warning"  ng-click="edit($index)">
+                Editar
+              </button>
+            </td>
+          </tr>
+        </table>
     </body>
 </html>

@@ -28,7 +28,7 @@ app.controller("blogCtrl", function($scope,$log,$http) {
         $log.debug($scope.entry);
         $http({
             method  : 'POST',
-            url     : 'blogs',
+            url     : 'blog',
             data    : $scope.entry
         }).success(function(data) {
             console.log(data);

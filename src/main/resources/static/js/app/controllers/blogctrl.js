@@ -7,20 +7,14 @@ app.controller("blogCtrl", function($scope,$log,$http) {
     $log.debug('se creo el $scope');
 
     $scope.loadData = function() {
-        var configList = {
-                method: "GET",
-                url: "blogs"
-                    };
-
-        var response=$http(configList);
-
-        response.success(function(data, status, headers, config) {
+        $http({
+            method: "GET",
+            url: "blogs"
+        }).success(function(data) {
             $scope.entries = data;
-            });
-
-        response.error(function(data, status, headers, config) {
+        }).error(function(data,status,headers,config) {
             alert("Ha fallado la petición. Estado HTTP:"+status);
-            });
+        });
     };
     $scope.loadData();
 });

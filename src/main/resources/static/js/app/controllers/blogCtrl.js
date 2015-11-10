@@ -38,6 +38,7 @@ app.controller("blogCtrl", function($scope,$log,$http) {
             url     : "blog",
             data    : $scope.entry
 	   }).success(function(data) {
+            $scope.entries = data;
             console.log(data);
          });
     };

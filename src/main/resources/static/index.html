@@ -11,11 +11,14 @@
     </head>
     <body ng-controller="blogCtrl">
             <div>
-          <form>
+          <form ng-submit="processForm()">
             <fieldset>
                 <legend>Entry</legend>
                 <label for='title'>Title:</label><input id='title' name='title' type="text" ng-model= "entry.title">
                 <label for='content'>Content:</label><input id='content' name='content' type="text" ng-model= "entry.content">
+                <button type="submit" class="btn btn-success">
+                  <span class="glyphicon glyphicon-plus">Crear
+                </button>
           </form>
         </div>
         <table class="table">

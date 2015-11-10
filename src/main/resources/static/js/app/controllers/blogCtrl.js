@@ -31,12 +31,12 @@ app.controller("blogCtrl", function($scope,$log,$http) {
     };
     $scope.processForm();
 
-    $scope.updateForm = function(){
+    $scope.edit = function(){
 	   $log.debug($scope.entry);
 	   $http({
             method  : "PUT",
             url     : "blog",
-            data    : $scope.entry.title
+            data    : $scope.entry
 	   }).success(function(data) {
             console.log(data);
          });

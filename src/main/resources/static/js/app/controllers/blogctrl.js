@@ -17,4 +17,16 @@ app.controller("blogCtrl", function($scope,$log,$http) {
         });
     };
     $scope.loadData();
+
+    $scope.processForm = function() {
+        $log.debug($scope.entry);
+        $http({
+            method  : 'POST',
+            url     : 'blog',
+            data    : $scope.entry
+        }).success(function(data) {
+            console.log(data);
+            $scope.loadData();
+        });
+    };
 });

@@ -32,4 +32,9 @@ public class EntryController {
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 
+    @RequestMapping(method = RequestMethod.DELETE,value = "/blog")
+    public  ResponseEntity<?>  deleteEntry(@RequestBody int pos) {
+        entries.remove(pos);
+        return new ResponseEntity<>(HttpStatus.ACCEPTED);
+    }
 }

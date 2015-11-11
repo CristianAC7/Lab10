@@ -29,5 +29,15 @@ app.controller("blogCtrl", function($scope,$log,$http) {
             $scope.loadData();
         });
     };
+    
+    $scope.remove = function(item) {
+        var index = $scope.entries.indexOf(item);
+  		$scope.entries.splice(item, 1);
+  		$log.debug('se borro $scope'); 
+    }
+    
+    $scope.selectSubObject = function(idx) {
+  		$scope.selectedSubObject = angular.copy($scope.selectedMainObject.subObjects[idx]);
+	}
 });
 

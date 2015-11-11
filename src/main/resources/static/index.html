@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body ng-controller="blogCtrl">
-            <div>
+    	<div>
           <form ng-submit="processForm()">
             <fieldset>
                 <legend>Entry</legend>
@@ -23,22 +23,22 @@
         </div>
         <table class="table">
           <tr>
-            <th>Título </th>
+            <th>Titulo </th>
             <th>Contenido</th>
             <th>Editar </th>
-	    <th>Eliminar </th>
+	    	<th>Eliminar </th>
           </tr>
 
           <tr ng-repeat="e in entries">
             <td> {{ e.title }} </td>
             <td> {{ e.content }} </td>
             <td>
-              <button type="button" class="btn btn-warning"  ng-click="edit($index)">
+              <button type="button" class="btn btn-warning"  ng-click="selectSubObject($index)">
                 Editar
               </button>
             </td>
-	    <td>
-              <button type="button" class="btn btn-warning"  ng-click="delete($index)">
+	    	<td>
+              <button type="button" class="btn"  ng-click="remove($index)">
                 Borrar
               </button>
             </td>

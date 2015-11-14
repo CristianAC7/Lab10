@@ -13,7 +13,7 @@ app.controller("blogCtrl", function($scope,$log,$http) {
         }).success(function(data) {
             $scope.entries = data;
         }).error(function(data,status,headers,config) {
-            alert("Ha fallado la petición. Estado HTTP:"+status);
+            alert("Ha fallado la peticiÃ›n. Estado HTTP:"+status);
         });
     };
     $scope.loadData();
@@ -45,8 +45,17 @@ app.controller("blogCtrl", function($scope,$log,$http) {
   	$log.debug('se borro $scope'); 
     };
     
-    $scope.selectSubObject = function(idx) {
-  		$scope.selectedSubObject = angular.copy($scope.selectedMainObject.subObjects[idx]);
-	};
-});
+    $scope.selectSubObject = function(item) {
+  	$http({
+            method  : "UPDATE",
+            url     : "http://localhost:8080/blog",
+            data    : item, 
+            headers  : {"Content-Type": "application/json;charset=utf-8"}
 
+        }).success(function(method, url, data, headers) {
+	    console.log(data);
+            $scope.loadData();
+        });
+  	$log.debug('se edito $scope'); 
+    };
+});

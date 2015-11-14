@@ -1,4 +1,4 @@
-package edu.eci.arsw.controller;
+package edu.eci.arsw.controler;
 
 import java.util.concurrent.atomic.AtomicLong;
 import org.springframework.web.bind.annotation.RequestMapping;
